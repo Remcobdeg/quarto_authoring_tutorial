@@ -57,11 +57,38 @@ plt.show()
 ```
 
 ```{python}
-#| output: false
+#| label: tbl-timeline
+#| tbl-cap: Astronomical object
 
 avg_years_between_eruptions = np.mean(np.diff(eruptions[:-1]))
 avg_years_between_eruptions
 ```
+
+```{python}
+#| label: tbl-planet-measures
+#| tbl-cap: Astronomical object
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["Sun","696,000",1.989e30],
+         ["Earth","6,371",5.972e24],
+         ["Moon","1,737",7.34e22],
+         ["Mars","3,390",6.39e23]]
+Markdown(tabulate(
+  table, 
+  headers=["Astronomical object","R (km)", "mass (kg)"]
+))
+```
+
+@tbl-timeline
+
+::: {#tbl-elephant}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ"></iframe>
+
+Elephant
+:::
+
 
 Based on data up to and including 1971, eruptions on La Palma happen every `{python} f"{avg_years_between_eruptions:.1f}"` years on average.
 
